@@ -1,0 +1,59 @@
+/* Fundraiser Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 70px; /* Adjust to align below the navbar */
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 70px); /* Fill remaining height below the navbar */
+    background-color: #039695; /* Sidebar color */
+    color: white;
+    padding: 20px;
+    overflow-y: auto; /* Enable scroll for long content */
+    border-right: 1px solid #f1f1f1; /* Subtle border for separation */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar li:hover {
+    background-color: white;
+    color: #039695;
+  }
+  
+  .sidebar li.active {
+    background-color: white;
+    color: #039695;
+    font-weight: bold;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 250px; /* Space for the sidebar */
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .profile-section h2 {
+    color: #039695; /* Match sidebar color */
+  }
+  
+  .profile-section p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  

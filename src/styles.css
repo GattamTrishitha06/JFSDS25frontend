@@ -1,0 +1,1961 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #039695;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #039695;
+  font-weight: bold;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.start-fundraiser {
+  border: 1px solid rgb(3, 150, 149);
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #039695;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sign-in {
+  color: #039695;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero-section {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 60px;
+  min-height: 100vh; /* Full-screen height */
+  color: #fff;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+  z-index: 1;
+}
+
+.content,
+.form-section {
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  max-width: 45%;
+  text-align: left;
+}
+  
+.content h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.form-section {
+  position: relative;
+  z-index: 2;
+  max-width: 45%;
+  margin-left: auto;
+}
+
+.form-section h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-section input,
+.form-section select {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: hwb(179 0% 25%);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.info {
+  font-size: 0.9em;
+  margin-top: 15px;
+}
+
+/* How It Works Section */
+.how-it-works {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+  color: #333;
+  text-align: center;
+}
+
+.how-it-works h1 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.step {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.step h2 {
+  color: #039695;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.step p {
+  color: #555;
+}
+
+/* Fade-in Animation */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+  background-color: #013629;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  flex: 1;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.social-media a {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.followers {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.contact-info {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex: 2;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8em;
+  line-height: 1.5;
+  padding: 20px;
+  border-top: 1px solid #4c4c4c;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* SignIn Page Styling */
+.signin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('assets/homepage-screenshot.jpg'); /* Use your homepage background */
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: brightness(0.5) blur(5px);/* Light blur effect */
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%; /* Set to a horizontal, wide width */
+  max-width: 700px; /* Adjust max width for screen size */
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.back-to-home {
+  align-self: flex-start;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #007bff; /* Link color */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.signin-form h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.signin-form label {
+  font-size: 1em;
+  color: #666;
+  align-self: flex-start;
+}
+
+.signin-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.signin-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(3, 150, 149); /* Button color */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.signin-form p {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 10px;
+}
+
+.signin-form a {
+  color: rgb(3, 150, 149);
+  text-decoration: none;
+}
+/* Browse Fundraisers Page */
+.browse-fundraisers {
+  padding: 50px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.fundraiser-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  padding: 20px;
+}
+
+.fundraiser-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fundraiser-card:hover {
+  transform: translateY(-10px); /* Hover effect */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.fundraiser-content {
+  padding: 20px;
+}
+
+.fundraiser-title h3 {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.fundraiser-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.fundraiser-stats {
+  font-size: 14px;
+  color: #444;
+  margin-top: 20px;
+}
+
+.fundraiser-stats div {
+  margin-bottom: 10px;
+}
+
+.fundraiser-stats strong {
+  color: #007bff;
+}
+
+/* Optional: Adding a responsive touch for small screens */
+@media (max-width: 768px) {
+  .fundraiser-list {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+  }
+}
+.success-message {
+  color: green;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+
+/* Signup Page Styling */
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('assets/homepage-screenshot.jpg'); /* Use your homepage background */
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: brightness(0.5) blur(5px); /* Light blur effect */
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%; /* Set to a horizontal, wide width */
+  max-width: 700px; /* Adjust max width for screen size */
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.back-to-home {
+  align-self: flex-start;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #007bff; /* Link color */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.signup-form h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.signup-form label {
+  font-size: 1em;
+  color: #666;
+  align-self: flex-start;
+}
+
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(3, 150, 149); /* Button color */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.signup-form p {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 10px;
+}
+
+.signup-form a {
+  color: rgb(3, 150, 149);
+  text-decoration: none;
+}
+.fundraiser-dashboard {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5em;
+}
+
+.create-fundraiser-btn {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-fundraiser-btn:hover {
+  background-color: #45a049;
+}
+
+.fundraisers-list h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.fundraisers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.fundraiser-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fundraiser-card h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.fundraiser-card p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.fundraiser-stats {
+  margin-bottom: 20px;
+}
+
+.fundraiser-stats p {
+  font-size: 1.2em;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.view-fundraiser-btn {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-fundraiser-btn:hover {
+  background-color: #1976d2;
+}
+.nav-buttons .sign-out-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color:#039695; /* Same color as Sign In button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.welcome-message {
+  font-size: 18px;
+  color: #039695; /* Desired color */
+  font-weight: bold;
+  margin-right: 20px;
+}.organizer-dashboard {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 20%;
+  background-color: #039695; /* Retained your original teal background color */
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li:hover {
+  background-color: #027f6d; /* Slightly darker teal for hover effect */
+  color: #e0e0e0; /* Muted white for hover text */
+  border: 1px solid #fff; /* Subtle white border on hover */
+  transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.sidebar ul li.active {
+  background-color: #025f4f; /* Darker shade of teal for active option */
+  color: #ffffff;
+  font-size: 17px; /* Slightly larger font size for active option */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for active option */
+}
+
+.sidebar ul li:not(:last-child) {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+/* Main content styling */
+.main-content {
+  width: 80%;
+  padding: 40px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+/* Profile box styling */
+.profile-box {
+  background-color: #ffffff;
+  padding: 30px;
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.profile-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.profile-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #000;
+}
+/* Quote container styling */
+.quote-container {
+  text-align: center;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+/* Quotation box styling */
+.quote-container .quote {
+  font-size: 1.3rem;
+  color: #555;
+  font-style: italic;
+  padding: 30px;
+  background-color: #ffffff; /* Light background for the quote box */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: 'Georgia', serif; /* Elegant font for quotes */
+}
+
+/* Quote box before element for decorative effect */
+.quote-container .quote:before {
+  content: open-quote;
+  font-size: 3rem;
+  color: hsl(180, 96%, 30%); /* Color to match your theme */
+  position: absolute;
+  top: -20px;
+  left: -30px;
+}
+
+/* Quote box after element for decorative effect */
+.quote-container .quote:after {
+  content: close-quote;
+  font-size: 3rem;
+  color: #039695; /* Color to match your theme */
+  position: absolute;
+  bottom: -20px;
+  right: -30px;
+}
+
+/* Header styling within quote container */
+.quote-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #039695; /* Matching the color of the sidebar */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive design adjustments for quote box */
+@media (max-width: 768px) {
+  .quote-container .quote {
+    padding: 20px;
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+
+  .quote-container h2 {
+    font-size: 1.5rem;
+  }
+}
+/* General Dashboard Styling */
+.fundraiser-dashboard {
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: "Arial", sans-serif;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Options Container */
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;  /* Increased gap for spacing */
+  justify-content: center;
+}
+
+/* Individual Option Box */
+.option-box {
+  position: relative;
+  background: linear-gradient(145deg, #83c5be, #006d77); /* Gradient base */
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  padding: 40px; /* Increased padding for larger boxes */
+  width: calc(33.33% - 40px); /* Increased width for bigger boxes */
+  min-width: 280px; /* Min width for better layout */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  animation: bounceIn 1s ease-in-out;
+}
+
+/* Alternating Animation */
+.animated-box-0 {
+  animation: slideIn 1.2s ease-in-out;
+}
+
+.animated-box-1 {
+  animation: zoomIn 1.2s ease-in-out;
+}
+
+/* Keyframes for Animations */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hover Effect */
+.option-box:hover {
+  transform: translateY(-15px) scale(1.05); /* Slightly bigger hover effect */
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #118ab2, #073b4c); /* Darker gradient */
+}
+
+/* Glow Effect */
+.option-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  animation: glowingEffect 5s infinite linear;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes glowingEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Content Styling */
+.option-box h3 {
+  font-size: 24px; /* Larger title font */
+  margin-bottom: 16px; /* Increased margin */
+  position: relative;
+  z-index: 2;
+}
+
+.option-box p {
+  font-size: 16px; /* Larger description text */
+  margin-bottom: 20px; /* Increased margin */
+  position: relative;
+  z-index: 2;
+}
+
+/* View Button */
+.view-button {
+  background-color: #ffffff;
+  color: #118ab2;
+  border: none;
+  padding: 12px 24px; /* Larger button padding */
+  font-size: 16px; /* Larger font */
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.view-button:hover {
+  background-color: #073b4c;
+  color: white;
+  transform: scale(1.1);
+}
+
+.view-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 150%;
+  height: 150%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transition: transform 0.5s ease-out;
+}
+
+.view-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .option-box {
+    width: calc(50% - 20px); /* Adjusted for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .option-box {
+    width: 100%; /* Full width on small screens */
+  }
+}
+/* Donor Dashboard Styling */
+.donor-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background: hsl(180, 96%, 30%);
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: hsl(180, 96%, 30%);
+}
+
+/* Main Content Styling */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-container {
+  max-width: 600px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px hsl(180, 96%, 30%);
+}
+
+.quote-container h2 {
+  font-size: 24px;
+  color: hsl(180, 96%, 30%);
+  margin-bottom: 20px;
+}
+
+.quote-container .quote {
+  font-style: italic;
+  color: #555;
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .donor-dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+    box-shadow: none;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .quote-container {
+    padding: 20px;
+  }
+}
+/* General Styling */
+.fundraise-create {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.fundraise-create h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Category Buttons */
+.category-selection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-selection button {
+  padding: 10px 15px;
+  background-color: #039695;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.category-selection button:hover {
+  background-color: #027f6d;
+  transform: scale(1.1);
+}
+
+/* Form Styling */
+.fundraiser-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out; /* Animation on load */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fundraiser-form h3 {
+  text-align: left;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.fundraiser-form label {
+  display: block;
+  margin-bottom: 15px;
+  color: #444;
+  font-weight: bold;
+}
+
+.fundraiser-form input,
+.fundraiser-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.fundraiser-form input:focus,
+.fundraiser-form textarea:focus {
+  border: 1px solid #039695;
+  outline: none;
+}
+
+/* File Input Styling */
+.fundraiser-form input[type="file"] {
+  padding: 5px;
+}
+
+/* Submit Button */
+.fundraiser-form button {
+  background-color: #039695;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fundraiser-form button:hover {
+  background-color: #027f6d;
+  transform: scale(1.05);
+}
+.donation-container {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.donation-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.other-amount {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tip-container {
+  margin-top: 20px;
+}
+
+.mental-health-tip {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-tip-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* View Donations Styles */
+.view-donations {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.page-title {
+  text-align: center;
+  color: #039695;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.fundraisers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.fundraiser-box {
+  background-color: #ffffff;
+  border: 2px solid #039695;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fundraiser-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fundraiser-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.fundraiser-details {
+  padding: 15px;
+}
+
+.fundraiser-details h3 {
+  color: #039695;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.fundraiser-details p {
+  color: #555555;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.donate-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #039695;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.donate-button:hover {
+  background-color: #027a6d;
+}
+
+/* Payment Container */
+.payment-container {
+  padding: 30px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 900px;
+  margin: 50px auto;
+  background: linear-gradient(45deg, #039695, #00c6c6);
+  color: white;
+  font-family: 'Arial', sans-serif;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Donation Amount Section */
+.donation-amount {
+  margin-top: 20px;
+}
+
+.donation-amount input {
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+  width: 150px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.donation-amount button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #039695;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.donation-amount button:disabled {
+  background-color: #ccc;
+}
+
+.donation-amount button:hover {
+  background-color: #028c7f;
+}
+
+.invalid-amount {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Payment Method Options */
+.payment-options-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payment-option {
+  width: 30%;
+  padding: 20px;
+  background-color: #fff;
+  color: #039695;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.payment-option:hover {
+  background-color: #028c7f;
+  color: white;
+}
+
+.payment-option.selected {
+  background-color: #039695;
+  color: white;
+}
+
+.payment-option-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* Payment Form */
+.payment-form {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.payment-form label {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.payment-form input:focus {
+  outline: none;
+  border-color: #039695;
+}
+
+.instructions {
+  margin-bottom: 30px;  /* Add space below the instructions section */
+}
+
+.instructions-title {
+  font-size: 24px;
+  margin-bottom: 10px; /* Space between title and the content */
+}
+/* General Form Container Styling */
+.event-form-container {
+  background-color: #f7f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.event-form-container h3 {
+  text-align: center;
+  color: #039695;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease;
+}
+
+/* Form Input Styling */
+.event-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.event-form-container label {
+  font-weight: bold;
+  color: #555;
+}
+
+.event-form-container input[type="text"],
+.event-form-container input[type="date"],
+.event-form-container input[type="file"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-form-container input[type="text"]:focus,
+.event-form-container input[type="date"]:focus,
+.event-form-container input[type="file"]:focus {
+  border-color: #039695;
+  box-shadow: 0 0 5px rgba(3, 150, 149, 0.5);
+}
+
+/* Submit Button Styling */
+.event-form-container button {
+  background-color: #039695;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.event-form-container button:hover {
+  background-color: #027e7c;
+  transform: scale(1.05);
+}
+
+.event-form-container button:active {
+  transform: scale(1);
+}
+
+/* Success/Error Message Styling */
+.event-form-container p {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #039695;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease;
+}
+
+.event-form-container p.error {
+  background-color: #e74c3c;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 600px) {
+  .event-form-container {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .event-form-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .event-form-container button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+/* Add a wrapper class for the event list to scope all the styles */
+.event-list-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 1200px;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+  color: #333; /* Default text color for the container */
+}
+
+/* Heading styling within the event list */
+.event-list-container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #039695; /* Heading color */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  animation: slideInFromTop 0.8s ease-out;
+}
+
+/* Table styling within the event list */
+.event-list-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  animation: fadeIn 1.5s ease-out;
+  font-size: 1.1rem;
+  color: #333; /* Set the table text color to dark gray */
+}
+
+/* Table header styling within the event list */
+.event-list-container th {
+  background-color: #039695;
+  color: #fff; /* White text color for the header */
+  padding: 12px;
+  text-align: left;
+  font-size: 1.1rem;
+  border-radius: 5px 5px 0 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Table row styling within the event list */
+.event-list-container td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #444; /* Dark gray color for the text in each row */
+}
+
+/* Hover effect for rows within the event list */
+.event-list-container tr:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.02);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Event Image styling within the event list */
+.event-list-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Loading message for image within the event list */
+.event-list-container p {
+  font-size: 1rem;
+  color: #555; /* Gray color for text inside p tags */
+  text-align: center;
+  font-style: italic;
+}
+
+/* Error and success messages within the event list */
+.event-list-container .error-message {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.event-list-container .success-message {
+  color: green;
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Button styling within the event list */
+.event-list-container button {
+  background-color: #039695;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+}
+
+/* Button hover effect within the event list */
+.event-list-container button:hover {
+  background-color: #027f6d;
+  transform: scale(1.05);
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation for slide-in from top */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.fundraiser-list {
+  padding: 20px;
+}
+
+.fundraiser-list h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+/* FundraiserList Specific Styling */
+.fundraiser-list-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title Styling */
+.fundraiser-list-container .fundraiser-title {
+  color: #039695;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Fundraiser List */
+.fundraiser-list-container .fundraiser-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Fundraiser Card */
+.fundraiser-list-container .fundraiser-card {
+  background-color: #ffffff;
+  border: 2px solid #039695;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideIn 1s ease-in-out;
+}
+
+/* Hover Effect for Cards */
+.fundraiser-list-container .fundraiser-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Fundraiser Name Styling */
+.fundraiser-list-container .fundraiser-name {
+  font-size: 24px;
+  color: #039695;
+  margin-bottom: 10px;
+}
+
+/* Location, Amount, and Raised Styling */
+.fundraiser-list-container .fundraiser-location,
+.fundraiser-list-container .fundraiser-amount,
+.fundraiser-list-container .fundraiser-raised {
+  font-size: 16px;
+  color: #333333;
+  margin: 5px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+/* Donor List Container */
+.donor-list-container {
+  background-color: #f9f9f9; /* Light background to contrast the main color */
+  border: 2px solid #039695; /* Border with the main color */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+}
+
+/* Title Styling */
+.donor-list-title {
+  font-size: 1.8rem;
+  color: #039695; /* Main color */
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* Donor Details Section */
+.donor-details {
+  background-color: #ffffff; /* White background for donor details */
+  border: 1px solid #039695; /* Border with the main color */
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  animation: slideUp 0.7s ease-out; /* Add slide-up animation */
+  transform: translateY(30px); /* For animation effect */
+}
+
+.donor-details p {
+  font-size: 1.1rem;
+  color: #333333; /* Neutral dark text for readability */
+  margin: 5px 0;
+}
+
+.donor-details strong {
+  color: #039695; /* Highlight labels in the main color */
+}
+
+/* Add Hover Effect for Donor Details */
+.donor-details:hover {
+  background-color: #e0f7f5; /* Light tint of the main color on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Emphasize shadow on hover */
+  transform: scale(1.02); /* Slight scaling on hover */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Loading Text Styling */
+.donor-list-container p {
+  font-size: 1rem;
+  color: #555555; /* Subtle text color for loading message */
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Feedback Form Page Styling */
+
+/* Overall form container */
+.feedback-form {
+  background-color: #f4f4f4; /* Light grey for the page */
+  font-family: Arial, sans-serif;
+  color: #333; /* Dark grey for text */
+  max-width: 600px;
+  margin: 30px auto; /* Center the form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+  background: #fff; /* White background for the form container */
+}
+
+/* Heading Styling */
+.feedback-form h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #039695; /* Primary color for title */
+  margin-bottom: 20px;
+}
+
+/* Form Group */
+.feedback-form .form-group {
+  margin-bottom: 15px;
+}
+
+/* Label Styling */
+.feedback-form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input Fields */
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus State */
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: #039695; /* Highlight border */
+  box-shadow: 0 0 5px rgba(3, 150, 149, 0.3); /* Subtle focus effect */
+}
+
+/* Textarea Styling */
+.feedback-form textarea {
+  resize: vertical; /* Allow resizing vertically only */
+  height: 120px;
+}
+
+/* Submit Button */
+.feedback-form button {
+  width: 100%;
+  background-color: #039695; /* Primary color for the button */
+  color: #fff; /* White text */
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button Hover */
+.feedback-form button:hover {
+  background-color: #027d75; /* Darker shade for hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedback-form {
+    padding: 15px;
+  }
+
+  .feedback-form h1 {
+    font-size: 1.5rem;
+  }
+}
